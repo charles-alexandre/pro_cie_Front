@@ -1,0 +1,17 @@
+<form [formGroup]="articleForm" (ngSubmit)="onSubmit(articleForm.value)">
+    <fieldset>
+      <legend>Article</legend>
+      <div class="ligne_saisie">
+        <div class="colonne_label">
+          <label for="marque">Marque :&nbsp;</label>
+        </div>
+        <div class="colonne_saisie">
+          <input type="text" name="marque" [formControl]="marqueControl" />
+        </div>
+      </div>
+      <div class="barre_boutons">
+        <button type="reset">Réinitialiser</button>
+        <button type="submit">Connexion</button>
+      </div>
+    </fieldset>
+  </form>

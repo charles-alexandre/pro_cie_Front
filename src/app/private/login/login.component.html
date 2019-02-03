@@ -1,0 +1,48 @@
+<!-- <div id="login">
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)">
+    <legend>Informations de connexion</legend>
+    <mat-form-field>
+      <input matInput placeholder="Identifiant" name="identifiant" [formControl]="identifiantControl"/>
+      <mat-error>L'identifiant est obligatoire</mat-error>
+    </mat-form-field>
+  
+    <mat-form-field>
+      <input matInput placeholder="Mot de passe" name="password" [formControl]="passwordControl"/>
+      <mat-error>Le mot de passe est obligatoire</mat-error>
+    </mat-form-field>
+    <div class="barre_boutons">
+      <button type="reset">Réinitialiser</button>
+      <button type="submit">Connexion</button>
+    </div>
+  </form>
+</div> -->
+
+<div *ngIf="isError">{{ wordingAlert }}</div>
+
+<div id="login">
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)">
+    <fieldset>
+      <legend>Informations de connexion</legend>
+      <div class="ligne_saisie">
+        <div class="colonne_label">
+          <label for="identifiant">Identifiant :&nbsp;</label>
+        </div>
+        <div class="colonne_saisie">
+          <input type="text" name="identifiant" [formControl]="identifiantControl" />
+        </div>
+      </div>
+      <div class="ligne_saisie">
+        <div class="colonne_label">
+          <label for="password">Mot de passe :&nbsp;</label>
+        </div>
+        <div class="colonne_saisie">
+          <input type="password" name="password" [formControl]="passwordControl"/>
+        </div>
+      </div>
+      <div class="barre_boutons">
+        <button type="reset">Réinitialiser</button>
+        <button type="submit">Connexion</button>
+      </div>
+    </fieldset>
+  </form>
+</div>
