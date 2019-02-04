@@ -1,17 +1,26 @@
-<div id="manage-article">
+<div id="manage-article" class="container">
 
-  <div routerLink="/new-article">Ajouter nouveau article</div>
+  <button routerLink="/new-article">Ajouter nouveau article</button>
 
-  <div *ngFor="let article of articles">
-    <div class="content-articles" [routerLink]="['/article', article.id]">
-      <div>{{ article.category.name }}</div>
-      <div>{{ article.marque }}</div>
-      <div>{{ article.reference }}</div>
-      <div>{{ article.image }}</div>
-      <div>{{ article.description }}</div>
-      <div *ngFor="let feature of article.features">
-          <div>{{ feature.name }}: {{ feature.value }}</div>
-      </div>
-    </div>
-  </div>
+  <table>
+    <tr>
+      <th>Catégorie</th>
+      <th>Marque</th>
+      <th>Référence</th>
+      <th>Action</th>
+    </tr>
+    <tr *ngFor="let article of articles">
+      <td>{{ article.category.name }}</td>
+      <td>{{ article.marque }}</td>
+      <td>{{ article.reference }}</td>
+      <td>
+        <span>
+          <img [routerLink]="['/article', article.id]" src="/assets/img/pencil.png"/>
+        </span>
+        <span>
+          <img (click)="deleteArticle(article.id)" src="/assets/img/garbage.png"/>
+        </span>
+      </td>
+    </tr>
+  </table>
 </div>

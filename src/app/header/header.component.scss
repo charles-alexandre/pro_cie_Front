@@ -1,0 +1,123 @@
+@import '../../styles/settings/_colors';
+@import '../../styles/settings/_screens';
+
+#header {
+    background-color: $header;
+    height: 80px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    .container-header {
+        padding: 10px;
+        color: $white;
+        img {
+            height: 60px;
+            cursor: pointer;
+        }
+        .items {
+            border-bottom: 1px solid;
+            margin-left: 20px;
+            .first {
+                width: 70px;
+            }
+            .item {
+                font-weight: bold;
+                margin: 0 10px;
+                cursor: pointer;
+                &:hover {
+                    border-bottom: 3px solid $red;
+                }
+            }
+            .menu {
+                list-style: none;
+                position: absolute;
+                top: 64px;
+                li {
+                    width: 250px;
+                    text-align: right;
+                    background: $white;
+                    color: $black;
+                    padding: 10px;
+                    cursor: pointer;
+                    &:hover {
+                        color: $red;
+                        border-left: 3px solid $red;
+                    }
+                }
+            }
+        }
+        .burger {
+            position: absolute;
+            right: 0;
+            margin-right: 20px;
+            margin-top: 15px;
+            img {
+                height: 30px;
+            }
+        }
+        .menu-burger {
+            list-style: none;
+            position: absolute;
+            top: 80px;
+            background: #666666;
+            width: 100%;
+            right: 20px;
+            height: 135px;
+            padding-top: 20px;
+            margin: 0;
+            text-align: right;
+            padding-right: 20px;
+            padding-left: 0;
+            ul {
+                list-style: none;
+            }
+            .arrow {
+                img {
+                    height: 20px;
+                    top: 4px;
+                    position: relative;
+                    margin-left: 10px;
+                }
+            }
+            .menu {
+                margin-right: 30px;
+            }
+            .align {
+                margin-right: 30px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: $xs) {
+    #header {
+        height: 100px;
+        .container-header {
+            padding: 20px;
+            .items {
+                .menu {
+                    padding-right: 274px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: $md) {
+    #header {
+        .container-header {
+            img {
+                margin-left: 20%;
+            }
+            .items {
+                margin-right: 20%;
+                .item {
+                    margin: 0 20px;
+                }
+                .menu {
+                    padding-right: 340px;
+                }
+            }
+        }
+    }
+}

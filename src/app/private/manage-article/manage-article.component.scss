@@ -1,5 +1,19 @@
 #manage-article {
-    .content-articles {
-        margin: 20px;
+    margin: 0 20%;
+    position: relative;
+    top: 20px;
+    table {
+        width: 100%;
+        padding-top: 20px;
+        th {
+            padding-bottom: 20px;
+        }
+        tr {
+            text-align: center;
+            img {
+                padding-right: 15px;
+                cursor: pointer;
+            }
+        }
     }
 }

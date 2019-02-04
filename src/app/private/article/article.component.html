@@ -1,4 +1,5 @@
-<form [formGroup]="articleForm" (ngSubmit)="onSubmit(articleForm.value)">
+<div id="article" class="container" fxLayoutAlign="center center">
+  <form [formGroup]="articleForm" (ngSubmit)="onSubmit(articleForm.value)">
     <fieldset>
       <legend>Article</legend>
       <div class="ligne_saisie">
@@ -15,3 +16,5 @@
       </div>
     </fieldset>
   </form>
+</div>
+

@@ -1,3 +1,39 @@
-<p>
-  header works!
-</p>
+<div id="header">
+  <div  fxLayout="row" class="container-header">
+    <img routerLink="/home" src="/assets/img/logo.png"/>
+    <div fxLayout="row" fxFlex fxLayoutAlign="end center" class="items" fxHide fxShow.gt-xs>
+      <div class="item first" (mouseenter)="menuOpen = true">Magasin</div>
+      <ul class="menu" *ngIf="menuOpen" (mouseleave)="menuOpen = false">
+        <li>Présentation de l'entreprise</li>
+        <li>Dépannage</li>
+      </ul>
+      <div class="item" (mouseenter)="menuOpen = false">Catalogue</div>
+      <div class="item">Promo</div>
+      <div class="item">Contact</div>
+    </div>
+    <div fxHide.gt-xs>
+      <div class="burger">
+        <img (click)="openBurger = !openBurger" src="/assets/img/menu.png"/>
+      </div>
+      <ul *ngIf="openBurger" class="menu-burger">
+        <li>
+          <div>
+            <span>Magasin</span>
+            <span class="arrow">
+              <img *ngIf="!menuOpen" (click)="menuOpen = true" src="/assets/img/arrow-down.png"/>
+              <img *ngIf="menuOpen" (click)="menuOpen = false" src="/assets/img/arrow-up.png"/>
+            </span>
+          </div>
+          <ul class="menu" *ngIf="menuOpen">
+            <li>Présentation de l'entreprise</li>
+            <li>Dépannage</li>
+          </ul>
+        </li>
+        <li class="align">Catalogue</li>
+        <li class="align">Promo</li>
+        <li class="align">Contact</li>
+      </ul>
+    </div>
+  </div>
+</div>
+

@@ -11,6 +11,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { InterceptorService } from './shared/interceptor.service';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { HeaderComponent } from './header/header.component';
     PrivateModule,
     PublicModule,
     HttpClientModule,
-    UtilsModule
+    UtilsModule,
+    FlexLayoutModule
   ],
   providers: [
     UtilsService,
